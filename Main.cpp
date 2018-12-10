@@ -16,8 +16,8 @@ int main() {
 	raf1.write(2.5, sizeof(double));
 
 	cout << raf1.read<double>(0) << endl;
-	cout << raf1.read<double>(1 *sizeof(double)) << endl;
-	cout << raf1.read<double>(2 *sizeof(double)) << endl;
+	cout << raf1.read<double>(1*sizeof(double)) << endl;
+	cout << raf1.read<double>(2*sizeof(double)) << endl;
 
 
 }
