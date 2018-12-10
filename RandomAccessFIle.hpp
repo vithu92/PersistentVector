@@ -23,7 +23,7 @@ template<class T>
 inline void RandomAccessFile::write(const T & data, streampos pos /* = -1*/)
 {
 	if (pos >= 0) {
-		m_file.seekg(pos);
+		m_file.seekp(pos);
 		if (!m_file) throw IOException("write error");
 	}
 
