@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RandomAccessFIle.h"
+#include "RandomAccessFile.h"
 
 template<class T>
 inline T RandomAccessFile::read(streampos pos /* = -1*/) const

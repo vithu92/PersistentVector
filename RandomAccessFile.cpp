@@ -31,8 +31,38 @@ streamsize RandomAccessFile::length() const
 	return length;
 }
 
-bool RandomAccessFile::truncate(streamsize s)
-{
-	return false;
+bool RandomAccessFile::truncate(streamsize length) {
+	if (length < 0) return false;
+
+	const streamsize buffSize = 128;
+	char buffer[buffSize];
+	const char *fileName = "tmp.tmp";
+
+	// create temp file
+	ofstream tmp(fileName, ios::out | ios::trunc | ios::binary);
+
+	// copy first length bytes
+	m_file.seekg(0);
+	if (!m_file) return false;
+	streamsize n;
+	while (length) {
+		n = __min(buffSize, length);
+		m_file.read(buffer, n);
+		tmp.write(buffer, n);
+		length -= n;
+	}
+
+	// close both files
+	m_file.close();
+	tmp.close();
+
+	// delete this file and rename tmp
+	if (remove(m_fileName.c_str())) return false;
+	if (rename(fileName, m_fileName.c_str())) return false;
+
+	// open this file
+	m_file.open(m_fileName.c_str(), ios::in | ios::out | ios::binary);
+
+	return m_file.good();
 }
 
