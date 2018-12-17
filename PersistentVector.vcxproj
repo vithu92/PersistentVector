@@ -140,8 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Main.h" />
-    <ClInclude Include="RandomAccessFIle.h" />
+    <ClInclude Include="PersistentVector.hpp" />
+    <ClInclude Include="RandomAccessFile.h" />
     <ClInclude Include="RandomAccessFIle.hpp" />
+    <ClInclude Include="VectorAccessor.hpp" />
+    <ClInclude Include="VectorIterator.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
