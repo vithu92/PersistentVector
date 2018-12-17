@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Main.h"
 #include "PersistentVector.hpp"
+#include <algorithm>
+
 
 #pragma
 struct Point {
@@ -41,7 +43,9 @@ int main() {
 	cout << "capacity = " << pv1.capacity() << endl;
 	
 
-
+	//Aufgabe! Anfangsiterator und Entiterator
+	sort(pv1.begin(), pv1.end());
+	
 	
 	/*PersistentVector<Point> pv2("pv2.bin");
 	Point p{ 1.1, 2.2, 3.3, 4 };

@@ -27,11 +27,11 @@ public:
 		return *this;
 	}
 
-	// relational Operators
+	// relational Operators ==, !=, <
 
-	// increment and decrement operator
+	// increment and decrement operator (2 Increment + 2 Decrement)
 
-	// arithmetische operators
+	// arithmetische operators: +, -,+=, -=
 
 	// access operators
 
